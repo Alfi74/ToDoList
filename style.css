@@ -1,0 +1,18 @@
+#newToDo {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.activeToDosButtons, #cleanListButton {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+}
+#cleanListButton{
+    font-size: 150%;
+}
+#cleanListLabel {
+    
+    text-decoration: none;
+}
+
