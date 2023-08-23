@@ -40,7 +40,7 @@ function createDiv(element) {
     <div class="form-check col-2">
         <input class="form-check-input" type="checkbox" value="" id="done" name = "done">
         <label class="form-check-label" for="done">
-          Schon erledigt?
+          Scho gmachdes?
         </label>
     </div>
     <button class="activeToDosButtons col-1" id="deleteSmall"><i class="bi bi-trash"></i></button>`;
@@ -59,7 +59,7 @@ function createDiv(element) {
     <div class="form-check col-2 doneElement">
         <input class="form-check-input doneElements" type="checkbox" value="" id="done" name = "doneDone" checked disabled>
         <label class="form-check-label" for="done">
-          Erledigt!
+          Scho gmachd!
         </label>
     </div>
     <button class="activeToDosButtons col-1 doneButtons" id="deleteSmall" disabled><i class="bi bi-trash"></i></button>`;
