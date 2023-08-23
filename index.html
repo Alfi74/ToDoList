@@ -12,102 +12,49 @@
     <script href="script.js"></script>
 </head>
 <body>
- <header class="row m-5 ">
-    <div class="col-2" id="logo">Uffbasse logo</div>
-    <h1 class="col-9 text-center display-4"> Uffgabe Lischde</h1>
+ <header class="row text-center">
+    <div class="col-4" id="logo"><img src="src/logo.png" alt="uffbasse logo" id="logoPic"></div> 
+    <h1 class="col-7 text-start"> Uffgabe Lischde</h1>
  </header>
 
  <!-- Section with a list of open "to dos"-->
 
 <section class="container" id="toDos">
- <div class="row d-flex align-items-center" id="toDo1">
-    <i class="bi bi-bank col-1 m-auto pb-2"></i>
-    <p class="col-8 mt-2 p-2"> Wichtiger Termin</p>
-    <div class="form-check col-2">
-        <input class="form-check-input" type="checkbox" value="" id="done">
-        <label class="form-check-label" for="done">
-          Schon erledigt?
-        </label>
-    </div>
-    <button class="activeToDosButtons col-1"><i class="bi bi-trash"></i></button>
-  </div>
-  <div class="row d-flex align-items-center" id="toDo2">
-    <i class="bi bi-bag col-1 m-auto pb-2"></i>
-    <p class="col-8 mt-2 p-2"> Einkaufen gehen </p>
-    <div class="form-check col-2">
-        <input class="form-check-input" type="checkbox" value="" id="done">
-        <label class="form-check-label" for="done">
-          Schon erledigt?
-        </label>
-    </div>
-    <button class="activeToDosButtons col-1"><i class="bi bi-trash"></i></button>
-  </div>
-  <div class="row d-flex align-items-center" id="toDo3">
-    <i class="bi bi-airplane col-1 m-auto pb-2"></i>
-    <p class="col-8 mt-2 p-2"> Tickets buchen </p>
-    <div class="form-check col-2">
-        <input class="form-check-input" type="checkbox" value="" id="done">
-        <label class="form-check-label" for="done">
-          Schon erledigt?
-        </label>
-    </div>
-    <button class="activeToDosButtons col-1"><i class="bi bi-trash"></i></button>
+  
+ 
+</section>
+<!-- Delete ALL button -->
+<section>
+  <div class="row d-flex align-items-center justify-content-end my-3" id="cleanList">
+    <label class="col-3" for="cleanListButton" id="cleanListLabel">Ganze Lischde Aufräumen:</label>
+    <button class="col-1" id="cleanListButton"><i class="bi bi-trash-fill"></i></button>
   </div>
 </section>
 <!-- Section with "new to do" input-->
 
 <section class="container my-5" id="toDoInput">
-    <div class="row input-group m-0" id="inputForm">
+    <form class="row input-group m-0" id="inputForm">
         <label for="newToDo" class="col-form-label-lg">Neue Uffgabe erstellen:</label>
-        <input class="form-control form-control-lg col-10" type="text" id= "newToDo" placeholder="Schreib hier was Du noch erledigen willst...">
-        <button class="btn btn-outline-secondary col-2" type="submit">Los geht's!</button>
-    </div>
+        <input class="form-control form-control-lg col-10" type="text" id= "newToDo" name="newToDo"  placeholder="Schreib hier was Du noch erledigen willst...">
+        <input class="btn btn-outline-secondary col-2" type="submit" id="newButton" value="Los geht's!">
+    </form>
 </section>
+
 
 <!-- Section with "old/done to dos"-->
 
 <section class="container collapse" id="collapseList">
-    <div class="row d-flex align-items-center text-decoration-line-through" id="done1">
-        <i class="bi bi-bank col-1 m-auto pb-2"></i>
-        <p class="col-8 mt-2 p-2"> Wichtiger Termin</p>
-        <div class="form-check col-2">
-            <input class="form-check-input" type="checkbox" value="" id="done" checked disabled>
-            <label class="form-check-label" for="done">
-              Erledigt!
-            </label>
-        </div>
-        <button class="activeToDosButtons col-1" disabled><i class="bi bi-trash"></i></button>
-      </div>
-      <div class="row d-flex align-items-center text-decoration-line-through" id="done2">
-        <i class="bi bi-bag col-1 m-auto pb-2"></i>
-        <p class="col-8 mt-2 p-2"> Einkaufen gehen </p>
-        <div class="form-check col-2">
-            <input class="form-check-input" type="checkbox" value="" id="done" checked disabled>
-            <label class="form-check-label" for="done">
-              Erledigt!
-            </label>
-        </div>
-        <button class="activeToDosButtons col-1" disabled><i class="bi bi-trash"></i></button>
-      </div>
-      <div class="row d-flex align-items-center text-decoration-line-through" id="done3">
-        <i class="bi bi-airplane col-1 m-auto pb-2"></i>
-        <p class="col-8 mt-2 p-2"> Tickets buchen </p>
-        <div class="form-check col-2">
-            <input class="form-check-input" type="checkbox" value="" id="done" checked disabled>
-            <label class="form-check-label" for="done">
-              Erledigt!
-            </label>
-        </div>
-        <button class="activeToDosButtons col-1" disabled><i class="bi bi-trash"></i></button>
-      </div>
+  <div id="slateDone">
+ 
+    </div>
       <div class="row d-flex align-items-center justify-content-end my-3" id="cleanList">
-        <label class="col-3" for="cleanListButton" id="cleanListLabel">Ganze Lischde Aufräumen:</label>
-        <button class="col-1" id="cleanListButton"><i class="bi bi-trash-fill"></i></button>
+        <label class="col-3" for="cleanListButton" id="cleanListLabel">Erledigte Aufräumen:</label>
+        <button class="col-1" id="cleanDoneButton"><i class="bi bi-trash-fill"></i></button>
       </div>
 </section>
 <!-- Collapse -->
 <div class ="row" id="collapse">
-  <label  for="cleanListButton" id="cleanListLabel">Erledigte Uffgaben Anglotzen</label>
+  <label  for="cleanListButton" id="cleanListLabel">Ausblenden</label>
   <button class="btn btn-outline-secondary" id = "cleanListButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseList" aria-expanded="false" aria-controls="collapseList">
         <i class="bi bi-chevron-double-down"></i>
   </button>
@@ -115,11 +62,13 @@
 
 <footer class="mt-5">
   <div class="row my-3">
+    <img class="col-3 m-auto" src="src/logo.png" alt="logo small" id="smallLogo">
     <p class="col-3 m-auto">Uffbasse Productions Inc.</p>
     <p class="col-1 m-auto">2023 <i class="bi bi-c-circle"></i></p>
 </div>
 </footer>
 <!-- adding bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="script.js"></script> 
 </body>
 </html>
