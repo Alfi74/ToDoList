@@ -20,5 +20,3 @@ const btn = document.getElementsByClassName('btn');
 const section = document.getElementById('toDos');
 
 // 
-
-
