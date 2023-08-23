@@ -139,12 +139,14 @@ let doneDivsArray=[];
 for (let i=0; i<doneTicked.length; i++) {
     
     doneTicked[i].addEventListener("change", ()=> {
+
+        
         openDivs[i].className="row d-none align-items-center justify-content-center";
         doneDivs[i].className="row d-flex align-items-center justify-content-center";
         
-     } );  
+    }
+     )};  
 
-}
 
 /*
     localStorage.setItem('openCheckBoxValue', JSON.stringify(doneTicked[i].checked===true));
