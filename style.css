@@ -1,14 +1,40 @@
+html {
+    background-color: #b1a7a6;
+}
+body {
+    width: 65%;
+    height: auto;
+    margin: auto;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    border: 1px solid #D82028;
+    background-color: #f5f3f4;
+    box-shadow: 3px 3px 3px 1px #D82028;
+   
+}
+
+#logoPic {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: auto;
+
+}
+h1 {
+    padding-top: 65px;
+    
+}
 #newToDo {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-.activeToDosButtons, #cleanListButton {
+.activeToDosButtons, #cleanListButton, #cleanDoneButton{
     border: none;
     background-color: transparent;
     margin: 0;
 }
-#cleanListButton{
+#cleanListButton, #cleanDoneButton {
     font-size: 150%;
 }
 #cleanListLabel {
@@ -21,4 +47,8 @@
     display: grid;
     justify-content: center;
     
+}
+#smallLogo {
+    width: 60px;
+    height: auto;
 }
