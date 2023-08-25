@@ -53,9 +53,9 @@ function createDiv(element) {
 	const newDoneDiv = document.createElement("div");
 	newDoneDiv.className = "row d-none align-items-center justify-content-center";
 	newDoneDiv.setAttribute("name", "newDoneDiv");
-	newDoneDiv.style.display = "none";
+	
 	newDoneDiv.innerHTML = ` <i class="bi bi-calendar2 col-1 m-auto pb-2"></i>
-    <p class="col-8 mt-2 p-2 text-decoration-line-through">${element}</p>
+    <p class="col-8 mt-2 p-2 text-decoration-line-through" name="text">${element}</p>
     <div class="form-check col-2 doneElement">
         <input class="form-check-input doneElements" type="checkbox" value="" id="done" name = "doneDone" checked disabled>
         <label class="form-check-label" for="done">
@@ -65,6 +65,7 @@ function createDiv(element) {
     <button class="activeToDosButtons col-1 doneButtons" id="deleteSmall" disabled><i class="bi bi-trash"></i></button>`;
 	newMainDoneDiv.appendChild(newDoneDiv);
 }
+
 
 // (function declaration) Getting Values/Texts from Input Form and saving it to the array.
 function inputIntake(event) {
@@ -105,9 +106,10 @@ toDoForm.addEventListener("submit", inputIntake);
 clearDone.addEventListener("click", () => {
 	doneDivSection.replaceChildren();
 });
-// delete button for the entire list of active to Dos
+// delete button for the entire list of active and done  to Dos
 clearActiveList.addEventListener("click", () => {
 	toDoSection.replaceChildren();
+    doneDivSection.replaceChildren();
 	localStorage.clear();
 	toDoTasksArray = [];
 });
@@ -133,33 +135,17 @@ let tickedArray = [];
 let doneDivsArray = [];
 
 for (let i = 0; i < doneTicked.length; i++) {
-	doneTicked[i].addEventListener("change", () => {
-		openDivs[i].className =
-			"row d-none align-items-center justify-content-center";
-		doneDivs[i].className =
-			"row d-flex align-items-center justify-content-center";
-	});
+    doneTicked[i].addEventListener("change", () => { 
+    openDivs[i].className =
+        "row d-none align-items-center justify-content-center";
+    doneDivs[i].className =
+        "row d-flex align-items-center justify-content-center";
+
+    let currentArray = fromLocalStorage(toDoTasksArray);
+    currentArray.splice(i, 1);
+	toLocalStorage(currentArray);
+    
+    
+});
 }
 
-/*
-    localStorage.setItem('openCheckBoxValue', JSON.stringify(doneTicked[i].checked===true));
-        //localStorage.setItem('openDivsState', JSON.stringify(openDivs[i].className= "row d-none align-items-center justify-content-center"));
-        //localStorage.setItem('doneDivsState', JSON.stringify(doneDivs[i].className = "row d-flex align-items-center justify-content-center"));
-        let chk = JSON.parse(localStorage.getItem("openCheckBoxValue"));
-    let openDivLook= JSON.parse(localStorage.getItem("openDivsState"));
-    
-    let doneDivLook = JSON.parse(localStorage.getItem("doneDivsState"));
-    console.log(doneDivLook)
-    if(chk===true) {
-        openDivLook;
-        doneDivLook;
-
-
-localStorage.setItem('openCheckBoxValue', JSON.stringify(doneTicked[i].checked));
-        localStorage.setItem('openDivsState', JSON.stringify(openDivs[i].className= "row d-none align-items-center justify-content-center"));
-        localStorage.setItem('doneDivsState', JSON.stringify(doneDivs[i].className = "row d-flex align-items-center justify-content-center"));
-        JSON.parse(localStorage.getItem("openCheckBoxValue"));
-JSON.parse(localStorage.getItem("openDivsState"));
-JSON.parse(localStorage.getItem("doneDivsState"));
-
-*/
